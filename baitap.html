@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vòng lặp</title>
+</head>
+<body>
+<h1><input type="number" placeholder="Nhập số a:" id="a"></h1>
+<h1><input type="number" placeholder="Nhập số b:" id="b"></h1>
+<button onclick="loop1()">Kết quả</button>
+<h1 id = "loop1"></h1>
+<script>
+    // In ra tong cac so chia het cho 6 tu a den b
+    // In ra tich cac so chan va chia het cho 5 tu a den b
+    // In ra so luong cac so > 10 va chia het cho 3 tu a den b
+    function loop1() {
+        const loop1 = document.getElementById("loop1")
+        let a = +document.getElementById("a").value
+        let b = +document.getElementById("b").value
+        let tong = 0
+        let tich = 1
+        let count = 0
+        for (let x1 = a; x1 <= b; x1++) {
+            if (x1 % 6 === 0) {
+                tong = tong + x1
+            }
+        }
+        for (let x2 = a; x2 <= b; x2++) {
+            if (x2 % 5 === 0 && x2 % 2 === 0) {
+                tich = tich * x2
+            }
+        }
+        for (let x3 = a; x3 <= b; x3++) {
+            if (x3 % 3 === 0 && x3 > 10) {
+                count++
+                // loop1.innerHTML +=   "<h2>"+x3+"</h2>"
+            }
+        }
+        loop1.innerHTML += "Tổng các số chia hết cho 6 từ " + a + " đến " + b + ": " + tong +
+            "<br>Tích các số chẵn và chia hết cho 5 từ " + a + " đến " + b + ": " + tich +
+            "<br>Số lượng các số >10 và chia hết cho 3 từ " + a + " đến " + b + ": " + count
+    }
+</script>
+</body>
+</html>
